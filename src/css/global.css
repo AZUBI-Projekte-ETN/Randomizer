@@ -1,0 +1,43 @@
+body {
+    margin: 0;
+    font-family: Arial, serif;
+}
+
+
+.container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 3em;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 5em;
+    margin-bottom: 2em;
+    background-color: #191919;
+    color: #99CC33;
+
+}
+
+
+ul {
+    background-color: #191919;
+
+}
+
+li {
+    background-color: #99CC33;
+    display: flex;
+    justify-content: center;
+}
+
+.input-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+
+}
