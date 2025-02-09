@@ -11,6 +11,24 @@ body {
     padding: 3em;
 }
 
+.btn {
+    border: #191919 solid 3px;
+    color: #99CC33;
+    background-color: #191919;
+}
+
+.name {
+    background-color: #191919;
+    color: #99CC33;
+    border: #191919 solid 3px;
+}
+
+.title {
+    text-align: center;
+    background-color: #323232;
+    margin-bottom: .5em;
+}
+
 nav {
     display: flex;
     justify-content: center;
@@ -23,6 +41,19 @@ nav {
 
 }
 
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.grid-item {
+    background-color: #99CC33;
+    border: 1px solid #191919;
+    padding: 20px;
+    text-align: center;
+}
+
 
 ul {
     background-color: #191919;
@@ -33,6 +64,7 @@ li {
     background-color: #99CC33;
     display: flex;
     justify-content: center;
+    margin: .5em;
 }
 
 .input-box {
