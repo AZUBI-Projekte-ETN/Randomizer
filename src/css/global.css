@@ -41,10 +41,18 @@ nav {
 
 }
 
+.btn-primary {
+    background-color: #323232 !important;
+    color: #99CC33 !important;
+    border: 2px solid #323232 !important;
+}
+
+
 .grid-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 10px;
+    padding: 3em;
 }
 
 .grid-item {

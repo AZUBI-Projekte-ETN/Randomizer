@@ -6,10 +6,16 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
     name.addEventListener("change", addName);
-    randBtn.addEventListener("click", randomizeName);
-
-
-
+    randBtn.addEventListener("click", () => {
+        if (fullNames.length == 0) {
+            alert('No names to Randomize')
+        } else {
+            while (fullNames.length != 0) {
+                randomizeName();
+            }
+        }
+    });
+        
     function addName(e) {
         fullNames.push(e.target.value);
         name.value = '';
@@ -17,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     function setNameInDom(name) {
-        document.querySelector('.grid-container').innerHTML += `<div class="grid-item">${name}<div/>`
+        document.querySelector('.grid-container').innerHTML += `<div class="grid-item">${name}<div/>`;
     }
 
     function deleteName(index) {
@@ -31,22 +37,15 @@ document.addEventListener("DOMContentLoaded", function() {
     function showNames() {
        clearNames();
         for (let i = 0;i<fullNames.length;i++) {
-            document.querySelector('.names').innerHTML += `<li>${fullNames[i]}</li>`
+            document.querySelector('.names').innerHTML += `<li>${fullNames[i]}</li>`;
         }
     }
 
     function randomizeName() {
-        if (fullNames.length == 0) {
-            console.error('Please enter Names')
-        }
-        else {
-            console.log(fullNames.length)
-            let randInt = Math.floor(Math.random() * fullNames.length);
-            setNameInDom(fullNames[randInt])
-            deleteName(randInt);
-            showNames();
-        }
-
+        let randInt = Math.floor(Math.random() * fullNames.length);
+        setNameInDom(fullNames[randInt]);
+        deleteName(randInt);
+        showNames();
     }
 
 
