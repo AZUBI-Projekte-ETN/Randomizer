@@ -5,7 +5,15 @@ document.addEventListener("DOMContentLoaded", function() {
     let fullNames = [];
 
 
-    name.addEventListener("change", addName);
+    name.addEventListener("change", () => {
+        if (!/[a-zA-ZÄäÖöÜü]/.test(name.value)) {
+            name.value = '';
+            alert('Only exepting letters and umlauts');
+        } else {
+            addName(name.value);
+        }
+    });
+
     randBtn.addEventListener("click", () => {
         if (fullNames.length == 0) {
             alert('No names to Randomize')
@@ -16,10 +24,10 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
         
-    function addName(e) {
-        fullNames.push(e.target.value);
+    function addName(name) {
+        fullNames.push(name);
         name.value = '';
-        showNames();
+        addNameToDomList();
     }
 
     function deleteName(index) {
@@ -30,27 +38,23 @@ document.addEventListener("DOMContentLoaded", function() {
         document.querySelector('.grid-container').innerHTML += `<div class="grid-item">${name}<div/>`;
     }
 
-    function clearNames() {
-        document.querySelector('.names').innerHTML = '';
+    function addNameToDomList() {
+        clearNamesInDom();
+         for (let i = 0;i<fullNames.length;i++) {
+             document.querySelector('.names').innerHTML += `<li>${fullNames[i]}</li>`;
+         }
     }
 
-    function showNames() {
-       clearNames();
-        for (let i = 0;i<fullNames.length;i++) {
-            document.querySelector('.names').innerHTML += `<li>${fullNames[i]}</li>`;
-        }
+    function clearNamesInDom() {
+        document.querySelector('.names').innerHTML = '';
     }
 
     function randomizeName() {
         let randInt = Math.floor(Math.random() * fullNames.length);
         setNameInDom(fullNames[randInt]);
         deleteName(randInt);
-        showNames();
+        addNameToDomList();
     }
-
-
-
-
 
 })
 

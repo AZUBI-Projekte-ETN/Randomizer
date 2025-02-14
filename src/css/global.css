@@ -56,7 +56,8 @@ nav {
 }
 
 .grid-item {
-    background-color: #99CC33;
+    background-color: #191919;
+    color: #99CC33;
     border: 1px solid #191919;
     padding: 20px;
     text-align: center;
@@ -69,7 +70,8 @@ ul {
 }
 
 li {
-    background-color: #99CC33;
+    background-color: #191919;
+    color: #99CC33;
     display: flex;
     justify-content: center;
     margin: .5em;
