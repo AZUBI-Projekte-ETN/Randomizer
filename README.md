@@ -1,4 +1,4 @@
-# HTML-CSS-Projekt
+# Randomizer
 
 # Instructions
 

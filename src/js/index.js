@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function() {
     let randBtn = document.querySelector('.rand-button');
 
     let fullNames = [];
+    let randomizedNames = [];
 
 
     name.addEventListener("change", addName);
@@ -41,11 +42,17 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 
+    function setNameInBackend(item) {
+        randomizedNames.push(item)
+    }
+
     function randomizeName() {
         let randInt = Math.floor(Math.random() * fullNames.length);
         setNameInDom(fullNames[randInt]);
+        setNameInBackend(fullNames[randInt]);
         deleteName(randInt);
         showNames();
+        console.log(randomizedNames);
     }
 
 
