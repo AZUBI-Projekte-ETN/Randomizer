@@ -7,11 +7,11 @@ document.addEventListener("DOMContentLoaded", function() {
 
     name.addEventListener("change", () => {
         if (!/[a-zA-ZÄäÖöÜü]/.test(name.value)) {
-            name.value = '';
             alert('Only exepting letters and umlauts');
         } else {
             addName(name.value);
         }
+        name.value = '';
     });
 
     randBtn.addEventListener("click", () => {
