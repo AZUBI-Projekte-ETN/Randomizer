@@ -22,12 +22,12 @@ document.addEventListener("DOMContentLoaded", function() {
         showNames();
     }
 
-    function setNameInDom(name) {
-        document.querySelector('.grid-container').innerHTML += `<div class="grid-item">${name}<div/>`;
-    }
-
     function deleteName(index) {
         fullNames.splice(index, 1);
+    }
+
+    function setNameInDom(name) {
+        document.querySelector('.grid-container').innerHTML += `<div class="grid-item">${name}<div/>`;
     }
 
     function clearNames() {
